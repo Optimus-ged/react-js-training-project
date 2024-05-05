@@ -5,8 +5,8 @@ import LoginThree from "@/components/loginThree";
 function App() {
   return (
     <section>
-      <LoginOne />
-      <LoginTwo />
+      {/* <LoginOne />
+      <LoginTwo /> */}
       <LoginThree />
     </section>
   );
