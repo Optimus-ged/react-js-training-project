@@ -1,55 +1,54 @@
-import Trees from "@/assets/trees.jpg";
+import Tree from "@/assets/trees.jpg";
 
 const LoginFour = () => {
   return (
     <div className="relative flex h-screen w-screen items-center justify-center">
-      <img className="h-full w-full object-cover" src={Trees} alt="/" />
-      <div className="absolute max-w-[400px]">
-        <div className="m-auto bg-white p-12 rounded">
-          {/* TOP IMAGE AREA */}
-          <div className="mb-8 flex justify-center">
-            <div className="boder h-20 w-20 rounded-full bg-gray-100"></div>
-          </div>
+      <img className="h-full w-full object-cover" src={Tree} alt="/" />
+      <div className="absolute rounded bg-white p-8">
+        {/* LOGIN IMAGE BRAND */}
+        <div className="flex w-full justify-center">
+          <div className="mb-8 h-20 w-20 rounded-lg bg-gray-100" />
+        </div>
 
-          {/* TEXT AREA */}
-          <div className="mb-8 text-center">
-            <p className="font-semibold text-amber-800">
-              Bon retour parmi nous
-            </p>
-            <p>Connecter pour commencer votre travail</p>
-          </div>
+        <div className="mb-8 text-center">
+          <p className="font-bold text-amber-500">Bon retour parmi nous</p>
+          <p>Connecter vous pour commencer le travail</p>
+        </div>
 
-          {/* LOGIN FORM */}
-          <form action="">
-            <div className="mb-2 flex flex-col gap-1">
-              <label className="text-sm">Nom d'utilisateur</label>
-              <input
-                className="border bg-amber-200 px-4 py-2 rounded"
-                type="text"
-                placeholder="Nom d'utilisateur"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-sm">Mot de passe</label>
-              <input
-                className="border bg-amber-200 px-4 py-2 rounded"
-                type="password"
-                placeholder="Mot de passe"
-              />
-            </div>
-            <p className="my-4 flex items-center text-sm">
-              <input className="mr-2" type="checkbox" />
-              Bon retour parmi nous
-            </p>
-            <button className="bg-amber-600 py-2 text-center rounded text-white hover:bg-amber-500 w-full">
-              Connection
-            </button>
-          </form>
-          <div className="py-4 text-center flex gap-2 items-center">
-            <div className="bg-gray-200 h-[1px] w-full"></div>
-            <p>Login</p>
-            <div className="bg-gray-200 h-[1px] w-full"></div>
+        {/* LOGIN FORM */}
+        <form action="">
+          <div className="mb-4 flex flex-col gap-1">
+            <label className="text-sm text-gray-600" htmlFor="">
+              Nom d'utilisateur
+            </label>
+            <input
+              className="rounded border w-full bg-amber-100 px-4 py-2"
+              type="text"
+              placeholder="Nom d'utilisateur"
+            />
           </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-sm text-gray-600" htmlFor="">
+              Mot de passe
+            </label>
+            <input
+              className="rounded border w-full bg-amber-100 px-4 py-2"
+              type="password"
+              placeholder="Mot de passe"
+            />
+          </div>
+          <p className="mt-4 flex items-center">
+            <input className="mr-2" type="checkbox" />
+            Se souvenir de moi
+          </p>
+          <button className="mt-2 w-full rounded bg-amber-500 py-2 text-center text-white hover:bg-amber-600">
+            Connection
+          </button>
+        </form>
+        <div className="mt-5 flex w-full items-center gap-2">
+          <div className="h-[1px] w-full bg-gray-200" />
+          <p>Login</p>
+          <div className="h-[1px] w-full bg-gray-200" />
         </div>
       </div>
     </div>
