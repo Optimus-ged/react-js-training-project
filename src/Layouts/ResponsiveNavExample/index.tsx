@@ -5,38 +5,71 @@ export default function ResponsiveNavExample() {
 
   return (
     <div
-      className={`h-screen w-screen bg-slate-200 ${isVisible ? "overflow-hidden" : "overflow-auto"}`}
+      className={`h-screen w-screen bg-slate-200 ${isVisible ? "overflow-y-hidden" : "overflow-y-auto"}`}
     >
-      <header className="sticky top-0 flex items-center justify-between bg-white px-4 py-8 drop-shadow-lg">
-        <h1>Logo</h1>
-        <h1 className="md:hidden" onClick={() => setIsVisible(!isVisible)}>
-          Menu
-        </h1>
-        <nav className="hidden md:block">
-          <ul className="flex gap-4">
-            <li>Home</li>
-            <li>About</li>
-            <li>Articles</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-      </header>
-      <nav
-        className={`fixed inset-0 backdrop-blur transition duration-300 ${isVisible ? "translate-x-0" : "translate-x-full"}`}
-        onClick={() => setIsVisible(!isVisible)}
-      >
-        <ul className="absolute bottom-0 right-0 top-0 flex w-5/6 flex-col gap-4 bg-white px-4 py-8">
+      <CustomHeader setIsVisible={() => setIsVisible(!isVisible)} />
+      <CustomNav
+        isVisible={isVisible}
+        setIsVisible={() => setIsVisible(!isVisible)}
+      />
+      <CustomBody />
+    </div>
+  );
+}
+
+type CustomHeaderProps = {
+  setIsVisible: () => void;
+};
+
+function CustomHeader({ setIsVisible }: CustomHeaderProps) {
+  return (
+    <header className="sticky top-0 flex items-center justify-between bg-white px-4 py-8 drop-shadow-md">
+      <h1>Logo</h1>
+      <h1 className="md:hidden" onClick={setIsVisible}>
+        Menu
+      </h1>
+      <nav className="hidden md:block">
+        <ul className="flex gap-4">
           <li>Home</li>
           <li>About</li>
           <li>Articles</li>
           <li>Contact</li>
         </ul>
       </nav>
-      <div className="h-[1000px] bg-orange-300">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, ex
-        fuga! Eveniet ex iusto et ut eaque ipsa fugit ullam accusantium
-        perferendis debitis atque quia aut, alias eius maiores sapiente
-      </div>
+    </header>
+  );
+}
+
+type CustomNavProps = {
+  isVisible: boolean;
+  setIsVisible: () => void;
+};
+
+function CustomNav({ isVisible, setIsVisible }: CustomNavProps) {
+  return (
+    <nav
+      className={`fixed inset-0 top-0 backdrop-blur transition duration-300 ${isVisible ? "translate-x-0" : "translate-x-full"}`}
+      onClick={setIsVisible}
+    >
+      <ul className="absolute bottom-0 right-0 top-0 flex w-5/6 flex-col gap-6 bg-white px-4 py-8">
+        <li>Home</li>
+        <li>About</li>
+        <li>Articles</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  );
+}
+
+function CustomBody() {
+  return (
+    <div className="h-[1000px] bg-green-800">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+        voluptatibus illum quisquam reprehenderit sapiente hic illo vero aut
+        voluptas, rerum perspiciatis natus mollitia soluta reiciendis magni,
+        inventore ut porro delectus.
+      </p>
     </div>
   );
 }
