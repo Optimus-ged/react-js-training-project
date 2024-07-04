@@ -23,9 +23,9 @@ type CustomHeaderProps = {
 
 function CustomHeader({ setIsVisible }: CustomHeaderProps) {
   return (
-    <header className="sticky top-0 flex items-center justify-between bg-white px-4 py-8 drop-shadow-md">
+    <header className="sticky top-0 flex items-center justify-between bg-white p-4 drop-shadow-md">
       <h1>Logo</h1>
-      <h1 className="md:hidden" onClick={setIsVisible}>
+      <h1 className="md:hidden cursor-pointer" onClick={setIsVisible}>
         Menu
       </h1>
       <nav className="hidden md:block">
@@ -63,7 +63,7 @@ function CustomNav({ isVisible, setIsVisible }: CustomNavProps) {
 
 function CustomBody() {
   return (
-    <div className="h-[1000px] bg-green-800">
+    <div className="h-[1000px] p-4">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
         voluptatibus illum quisquam reprehenderit sapiente hic illo vero aut
